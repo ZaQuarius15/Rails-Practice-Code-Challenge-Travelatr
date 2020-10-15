@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :bloggers
   resources :posts
   resources :destinations
+  post '/posts/:id/like', to: 'posts#like', as: 'add_like'
 
 end

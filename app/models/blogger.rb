@@ -23,7 +23,7 @@ class Blogger < ApplicationRecord
         top_post = post
       end
     end
-    top_post
+    posts.last
   end
 
 end
