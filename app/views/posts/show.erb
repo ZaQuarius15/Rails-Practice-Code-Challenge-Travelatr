@@ -8,4 +8,7 @@
 
 <%= button_to "Add Like", add_like_path(@post), method: :post %> 
 
+Likes: <%= @post.likes %><br><br>
 
+
+<%= link_to "Back to Posts", posts_path %>

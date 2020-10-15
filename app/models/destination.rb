@@ -16,7 +16,11 @@ class Destination < ApplicationRecord
         top_post = post
       end
     end
-    posts.last
+    if top_post == 0
+      self.posts.last
+    else
+    top_post
+    end
   end
 
   def average_age

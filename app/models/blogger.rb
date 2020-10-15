@@ -6,6 +6,7 @@ class Blogger < ApplicationRecord
   validates :age, numericality: { greater_than: 0 }
   validates :bio, length: { minimum: 30 }
 
+
   def total_likes
     total = 0
     self.posts.each do |post|
@@ -16,14 +17,18 @@ class Blogger < ApplicationRecord
 
   def featured_post
     p_likes = 0
-    top_post = nil
+    top_post = 0
     self.posts.each do |post|
       if post.likes > p_likes
         p_likes = post.likes
         top_post = post
       end
     end
-    posts.last
+    if top_post == 0
+      self.posts.last
+    else
+    top_post
+    end
   end
 
 end

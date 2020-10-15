@@ -6,7 +6,9 @@ class Post < ApplicationRecord
   validates :content, length: { minimum: 100 }
 
   def add_like
-    self.likes += 1
+      self.likes += 1
+      self.save
+      self.likes
   end
 
 end

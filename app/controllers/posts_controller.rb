@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
 
+    def index
+        @posts = Post.all
+    end
+    
     def like
         @post = Post.find(params[:id])
         @post.add_like
